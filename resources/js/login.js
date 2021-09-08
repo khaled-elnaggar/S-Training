@@ -7,5 +7,12 @@ const logUserIn = (e) => {
   setTimeout(() => {
     spinner.style.display = "none";
     successMessage.style.display = "block";
+    waitAndRedirect();
+  }, 1000);
+}
+
+const waitAndRedirect = () => {
+  setTimeout(() => {
+    location.assign("users.html");
   }, 1500);
 }
