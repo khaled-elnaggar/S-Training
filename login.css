@@ -11,3 +11,19 @@ html {
   display: flex;
   justify-content: center;
 }
+
+input {
+  width: 180px;
+}
+
+#login-footer {
+  display: flex;
+  align-items: center;
+}
+
+#success-message {
+}
+
+button {
+  margin-left: auto;
+}
