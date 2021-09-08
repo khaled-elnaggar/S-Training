@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fictional - Log in</title>
+  <link rel="stylesheet" href="/resources/css/login.css">
+  <link rel="stylesheet" href="/resources/css/spinner.css">
+  <script src="/resources/js/login.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="login-container">
+    <form onsubmit="logUserIn(event)" id="login">
+      <div id="inputs">
+        <label for="username">Username</label>
+        <br />
+        <input type="text" id="username" placeholder="Username" required />
+        <br />
+        <br />
+        <label for="password">Password</label>
+        <br />
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <div id="login-footer">
+
+        <p id="success-message">Login successful!<br> redirecting...</p>
+
+        <svg id="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="18" fill="none" stroke-width="5"></circle>
+        </svg>
+
+        <div id="login-btn">
+          <input type="submit" value="login">
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
