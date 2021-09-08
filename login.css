@@ -22,6 +22,8 @@ input {
 }
 
 #success-message {
+  color: green;
+  font-weight: bold;
 }
 
 button {
