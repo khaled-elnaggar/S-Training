@@ -14,30 +14,27 @@
   <script src="resources/js/login.js" defer></script>
 </head>
 
-<body>
+<body class="d-flex justify-content-center align-items-center">
   <div id="login-container">
-    <form onsubmit="logUserIn(event)" id="login">
-      <h4>Welcome. Please login</h4>
-      <div id="inputs" class="d-flex">
-        <div>
-          <label for="username">Username</label>
-          <br />
+    <form onsubmit="logUserIn(event)" id="login" class="">
+      <h4 class="text-center">Welcome. Please login</h4>
+
+      <div id="inputs" class="row">
+        <div class="col-12 col-md-6 d-flex mb-1 justify-content-center">
+          <label for="username">Username </label>
           <input type="text" id="username" placeholder="Username" required />
         </div>
-        <div>
-          <label for="password">Password</label>
-          <br />
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <label for="password">Password </label>
           <input type="password" id="password" placeholder="Password" required />
         </div>
       </div>
+
       <div id="login-footer">
-
         <p id="success-message">Login successful!<br> redirecting...</p>
-
         <svg id="spinner" viewBox="0 0 50 50">
           <circle class="path" cx="25" cy="25" r="18" fill="none" stroke-width="5"></circle>
         </svg>
-
         <div id="login-btn">
           <input type="submit" value="login">
         </div>

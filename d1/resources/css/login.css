@@ -2,23 +2,26 @@ html {
   height: 100%;
 }
 
+body {
+  height: 100%;
+}
+
 #login-container {
   border: 2px blue solid;
   border-radius: 20px;
   padding: 20px;
-  /* max-width: 250px; */
-  margin: 40vh auto;
   display: flex;
   justify-content: center;
 }
 
 #inputs input {
-  /* width: 180px; */
+  margin-left: 5px;
 }
 
 #login-footer {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px 5px 0px 5px;
 }
 
@@ -29,8 +32,4 @@ p {
   color: green;
   font-weight: bold;
   display: none;
-}
-
-#login-btn {
-  margin-left: auto;
 }

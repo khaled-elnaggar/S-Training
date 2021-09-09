@@ -1,8 +1,10 @@
 var successMessage = document.getElementById('success-message');
 var spinner = document.getElementById('spinner');
+var loginButton = document.getElementById("login-btn");
 
 const logUserIn = (e) => {
   e.preventDefault();
+  loginButton.style.display = "none"
   spinner.style.display = "block";
   setTimeout(() => {
     spinner.style.display = "none";
