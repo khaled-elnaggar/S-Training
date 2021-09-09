@@ -7,7 +7,7 @@ html {
   border-radius: 20px;
   padding: 20px;
   max-width: 50%;
-  min-width: 450px;
+  min-width: 520px;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
@@ -21,4 +21,13 @@ table {
 table * {
   padding: 10px;
   border: 1px solid blue;
+}
+
+#search-lg {
+  position: fixed;
+  right: 5%;
+}
+
+tr {
+  border: 2px red solid;
 }
