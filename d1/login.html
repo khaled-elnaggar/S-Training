@@ -12,16 +12,18 @@
 <body>
   <div id="login-container">
     <form onsubmit="logUserIn(event)" id="login">
-      <div id="inputs">
-        <h3>Welcome. Please login</h4>
+      <h4>Welcome. Please login</h4>
+      <div id="inputs" class="d-flex">
+        <div>
           <label for="username">Username</label>
           <br />
           <input type="text" id="username" placeholder="Username" required />
-          <br />
-          <br />
+        </div>
+        <div>
           <label for="password">Password</label>
           <br />
           <input type="password" id="password" placeholder="Password" required />
+        </div>
       </div>
       <div id="login-footer">
 
