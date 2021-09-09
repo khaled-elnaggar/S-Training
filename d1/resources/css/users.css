@@ -5,9 +5,7 @@ html {
 #table-container {
   border: 2px black solid;
   border-radius: 20px;
-  padding: 20px;
-  max-width: 50%;
-  min-width: 520px;
+  padding: 10px;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
@@ -26,8 +24,4 @@ table * {
 #search-lg {
   position: fixed;
   right: 5%;
-}
-
-tr {
-  border: 2px red solid;
 }

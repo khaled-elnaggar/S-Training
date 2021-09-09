@@ -20,7 +20,7 @@ const fetchUsers = async (url) => {
 
   users.forEach(user => {
     const itemRow = document.createElement('tr');
-    itemRow.innerHTML = `<td>${user.id}</td><td><img src="${user.avatar}"/></td><td>${user.first_name}</td><td>${user.email}</td>`;
+    itemRow.innerHTML = `<td>${user.id}</td><td><img class="w-100 w-lg-50" src="${user.avatar}"/></td><td>${user.first_name}</td><td>${user.email}</td>`;
     itemsDiv.appendChild(itemRow);
   });
 
