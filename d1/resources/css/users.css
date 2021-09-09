@@ -5,7 +5,7 @@ html {
 #table-container {
   border: 2px black solid;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@ html {
 
 table {
   border-collapse: collapse;
+  text-align: center;
 }
 
 table * {
@@ -24,4 +25,8 @@ table * {
 #search-lg {
   position: fixed;
   right: 5%;
+}
+
+.breakable {
+  overflow-wrap: anywhere;
 }
