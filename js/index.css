@@ -8,12 +8,14 @@
 }
 
 #left-card {
+  position: relative;
   width: 50%;
   height: 100vh;
   background-color: red;
 }
 
 #right-card {
+  position: relative;
   width: 50%;
   height: 100vh;
   background-color: blue;
