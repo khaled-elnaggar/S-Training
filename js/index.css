@@ -1,0 +1,20 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#main {
+  display: flex;
+}
+
+#left-card {
+  width: 50%;
+  height: 100vh;
+  background-color: red;
+}
+
+#right-card {
+  width: 50%;
+  height: 100vh;
+  background-color: blue;
+}
