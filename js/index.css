@@ -4,19 +4,32 @@
 }
 
 #main {
+  height: 100vh;
+}
+
+#game {
   display: flex;
+  /* align-items: stretch; */
+  height: 90vh;
 }
 
 #left-card {
   position: relative;
   width: 50%;
-  height: 100vh;
   background-color: red;
 }
 
 #right-card {
   position: relative;
   width: 50%;
-  height: 100vh;
   background-color: blue;
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+#info > * {
+  margin: 10px 50px 10px 50px;
 }
