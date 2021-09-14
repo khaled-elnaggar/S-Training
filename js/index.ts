@@ -87,8 +87,8 @@ class HTMLView implements GameView {
 
 class ImageFactory {
 
-  private LEFT_CARD = document.getElementById('left-card');
-  private RIGHT_CARD = document.getElementById('right-card');
+  private LEFT_CARD: HTMLElement = document.getElementById('left-card');
+  private RIGHT_CARD: HTMLElement = document.getElementById('right-card');
   private level: ILevel;
   private score: IScoreSystem;
   private view: GameView;
@@ -117,7 +117,7 @@ class ImageFactory {
   }
 
   genLeftAndRight(): void {
-    const imageLeft = <HTMLElement>this.genAnImage();
+    const imageLeft: HTMLElement = <HTMLElement>this.genAnImage();
     imageLeft.addEventListener('click', () => {
       this.score.decScore();
       this.view.updateGame();
@@ -125,7 +125,7 @@ class ImageFactory {
     );
 
     this.LEFT_CARD.appendChild(imageLeft);
-    let imageRight = <HTMLElement>imageLeft.cloneNode();
+    const imageRight: HTMLElement = <HTMLElement>imageLeft.cloneNode();
     imageRight.innerHTML = imageLeft.innerHTML;
     imageRight.addEventListener('click', () => {
       this.score.decScore();
@@ -139,7 +139,7 @@ class ImageFactory {
   }
 
   genRandomLeft(): void {
-    const randomImage = this.genAnImage();
+    const randomImage: HTMLElement = <HTMLElement>this.genAnImage();
     randomImage.addEventListener('click', (e) => {
       this.score.incScore();
       this.LEFT_CARD.removeChild(<HTMLElement>e.target);
@@ -161,3 +161,6 @@ class ImageFactory {
 
 
 
+(function main(): void {
+  console.log('compiled successfully')
+})()
