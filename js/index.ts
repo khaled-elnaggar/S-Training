@@ -24,7 +24,7 @@ class EasyLevel implements ILevel {
   public getImageCount(): number { return this.currLevel * 8 };
   public getRandomCount(): number { return this.randomCount };
   public getImageSize(): number { return Math.max(50, 100 - (10 * this.currLevel)) };
-  public getEmoji(): string { return (this.currLevel < 4) ? this.EMOJIS[this.currLevel - 1] : this.EMOJIS[Math.round(this.EMOJIS.length * Math.random())] };
+  public getEmoji(): string { return (this.currLevel < 4) ? this.EMOJIS[this.currLevel - 1] : this.EMOJIS[Math.floor(this.EMOJIS.length * Math.random())] };
   public resetLevel(): void { this.currLevel = 1 };
 }
 
@@ -55,8 +55,8 @@ class HTMLView implements GameView {
   private level: ILevel;
   private score: IScoreSystem;
 
-  private LEFT_CARD = <HTMLElement>document.getElementById('left-card');
-  private RIGHT_CARD = <HTMLElement>document.getElementById('right-card');
+  private LEFT_CARD = <ParentNode>document.getElementById('left-card');
+  private RIGHT_CARD = <ParentNode>document.getElementById('right-card');
   private SCORE_SPAN = <HTMLElement>document.getElementById('score-span');
   private LEVEL_SPAN = <HTMLElement>document.getElementById('level-span');
   private IMAGES_LEFT_SPAN = <HTMLElement>document.getElementById('mismatched-span');
@@ -130,9 +130,6 @@ class ImageFactory {
     imageRight.addEventListener('click', () => {
       this.score.decScore();
       this.view.updateGame();
-      if (this.level.getRandomCount() == 0) {
-        this.genAllImages();
-      }
     }
     );
     this.RIGHT_CARD.appendChild(imageRight);
@@ -141,14 +138,20 @@ class ImageFactory {
   genRandomLeft(): void {
     const randomImage: HTMLElement = <HTMLElement>this.genAnImage();
     randomImage.addEventListener('click', (e) => {
+      const currLvl: number = this.level.getCurrLevel();
+
       this.score.incScore();
       this.LEFT_CARD.removeChild(<HTMLElement>e.target);
+      this.level.decRandomCount();
       this.view.updateGame();
+      if (currLvl != this.level.getCurrLevel()) {
+        this.genAllImages();
+      }
     });
     this.LEFT_CARD.appendChild(randomImage);
   }
 
-  genAllImages(): void {
+  public genAllImages(): void {
     for (var i = 0; i < this.level.getImageCount(); i++) {
       this.genLeftAndRight()
     }
@@ -162,5 +165,11 @@ class ImageFactory {
 
 
 (function main(): void {
-  console.log('compiled successfully')
+  console.log('compiled successfully');
+  const level: ILevel = new EasyLevel();
+  const scoreSystem: IScoreSystem = new TenFiveScore();
+  const gameView: GameView = new HTMLView(level, scoreSystem);
+  const imgFactory: ImageFactory = new ImageFactory(level, scoreSystem, gameView);
+  imgFactory.genAllImages();
 })()
+
